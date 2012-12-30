@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_filter :authorize, :only => [:new, :create]
 
   def index
     @orders = Order.all
